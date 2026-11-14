@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ahd-free-demo
+    runtime: docker
+    plan: free
+    rootDir: outputs/AHD/browser
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: AHD_PUBLIC_MODE
+        value: "1"
